@@ -1,0 +1,13 @@
+{
+  "name": "John",
+  "surname": "Brown",
+  "brothers": ["Alex", "Bob"],
+  "sisters": ["Tanya"],
+  "age": 20,
+  "sex": "male",
+  "parents": [
+    { "name": "Alex", "age": 50 },
+    { "name": "Elena", "age": 49 }
+  ],
+  "isStudent": false
+}
