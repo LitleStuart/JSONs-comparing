@@ -1,9 +1,10 @@
-const dict = new Map();
+const fs = require("fs");
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+const dict = new Map();
 function rename(str) {
   let result = "";
   if (dict.has(str)) {
@@ -12,7 +13,7 @@ function rename(str) {
     if (typeof str === "number") {
       const digits = "0123456789";
       str = str.toString();
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 8; i++) {
         result += digits[getRandomInt(digits.length)];
       }
       str *= 1;
@@ -21,7 +22,7 @@ function rename(str) {
       str = str.toString();
       const abc =
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 8; i++) {
         result += abc[getRandomInt(abc.length)];
       }
     }
@@ -46,3 +47,9 @@ function anonimize(obj) {
   }
   return rename(obj);
 }
+
+const result = [];
+for (const key of dict) {
+  result.push(key);
+}
+fs.writeFileSync("dict.json", JSON.stringify(result));
