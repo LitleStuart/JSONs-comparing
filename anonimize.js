@@ -46,9 +46,3 @@ function anonimize(obj) {
   }
   return rename(obj);
 }
-
-console.log(
-  anonimize({
-    qwe: [1, 2, "asdasd", 2, "qwe", { asdasd: 1, qwe: "asd" }, true],
-  })
-);
