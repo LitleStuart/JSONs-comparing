@@ -11,13 +11,8 @@ function rename(str) {
     result = dict.get(str);
   } else {
     if (typeof str === "number") {
-      const digits = "0123456789";
-      str = str.toString();
-      for (let i = 0; i < 8; i++) {
-        result += digits[getRandomInt(digits.length)];
-      }
-      str *= 1;
-      result *= 1;
+      const epsilon = 999999999;
+      result = getRandomInt(epsilon);
     } else {
       str = str.toString();
       const abc =
